@@ -1,0 +1,89 @@
+workshop
+<!DOCTYPEhtml >
+< html  lang =" es " >
+< cabeza >
+    < juego de caracteres meta  =" UTF-8 " >
+    < meta  http-equiv =" X-UA-Compatible " content =" IE=edge " >
+    < meta  name =" viewport " content =" ancho=ancho-del-dispositivo, escala-inicial=1.0 " >
+    < título > Documento </ título >
+    < enlace  rel =" hoja de estilo " href =" https://bootswatch.com/5/vapor/bootstrap.min.css " >
+</ cabeza >
+< cuerpo >
+    < div  clase =" contenedor " >
+        < formulario  id =" formulario " >
+            < clase div  =" mb-3 " >
+              < etiqueta  para =" idNombre " class =" formulario-etiqueta " > Nombre </ etiqueta >
+              < tipo de entrada  =" texto " clase =" formulario-control " nombre =" nombre " id =" idNombre " >
+            </ div >
+            < clase div  =" mb-3 " >
+                < etiqueta  para =" idMarca " clase =" formulario-etiqueta " > Marca </ etiqueta >
+                < tipo de entrada  =" texto " clase =" formulario-control " nombre =" marca " id =" idMarca " >
+              </ div >
+              < clase div  =" mb-3 " >
+                < etiqueta  para =" idPrecio " class =" formulario-etiqueta " > Precio </ etiqueta >
+                < tipo de entrada  =" número " clase =" formulario-control " nombre =" precio " id =" idPrecio " >
+              </ div >
+              < clase div  =" mb-3 " >
+                < etiqueta  para =" idStock " class =" form-label " > Stock </ label >
+                < tipo de entrada  =" número " clase =" formulario-control " nombre =" stock " id =" idStock " >
+              </ div >
+            < button  type =" enviar " class =" btn btn-dark " > Crear Producto </ button >
+          </ formulario >
+    < / div > <br> <br> _ _ _
+    < button  id =" botonProductos " class =" btn btn-danger " > Mostrar Productos </ button >
+    < div  class =" fila contenedor " id =" divProductos " > </ div >
+    < script  src =" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integridad =" sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin =" anónimo " > </ script >
+    < guión  src =" guión.js " > </ guión >
+</ cuerpo >
+</ html >
+-------------------------------------
+js
+producto de clase { 
+    constructor ( nombre ,  marca ,  precio ,  stock )  {
+        esto _ nombre  =  nombre ;
+        esto _ marca  =  marca ;
+        esto _ precio  =  precio ;
+        esto _ existencias  =  existencias ;
+    }
+}
+
+let  productos  =  [ ]
+
+if ( localStorage.getItem ( ' Productos ' ) ) { 
+    productos  =  JSON . analizar ( almacenamiento local . getItem ( 'Productos' ) )
+}  más  {
+    almacenamiento local . setItem ( 'Productos' ,  JSON . stringify ( productos ) )
+}
+
+let  formularioId  =  documento . querySelector ( '#formulario' )
+let  divProductos  =  documento . querySelector ( '#divProductos' )
+let  botonProductos  =  documento . querySelector ( '#botonProductos' )
+
+formularioId . addEventListener ( 'enviar' ,  ( e )  =>  {
+    mi . prevenirPredeterminado ( )
+    let  datForm  =  new  FormData ( por ejemplo , objetivo )
+    const  producto  =  nuevo  Producto ( datForm . get ( 'nombre' ) ,  datForm . get ( 'marca' ) ,  datForm . get ( 'precio' ) , datForm . get ( 'stock' )  )
+    productos _ empujar ( producto )
+    consola _ registro ( productos )
+    almacenamiento local . setItem ( 'Productos' ,  JSON . stringify ( productos ) )
+    formularioId . restablecer ( )
+} )
+
+botonProductos . addEventListener ( 'clic' ,  ( )  =>  {
+    let  productosStorage  =  JSON . analizar ( almacenamiento local . getItem ( 'Productos' ) )
+
+    productosAlmacenamiento . paraCada ( producto  =>  {
+        divProductos . HTML interno  +=  `
+            <div class="borde de la tarjeta-mb-3 secundario" style="max-width: 20rem;">
+                <div class="card-header"> ${ producto . nombre } </div>
+                    <div class="cuerpo-de-tarjeta">
+                    <h4 class="card-title"> ${ producto . marca } </h4>
+                    <p class="texto-tarjeta">$ ${ producto . precio } </p>
+                    <p class="texto-tarjeta">$ ${ producto . acciones } </p>
+                </div>
+            </div>
+        `
+    } )
+} )
+
+entrada _ valor  =  " "
