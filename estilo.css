@@ -1,4 +1,18 @@
+body{
+    padding: 25px;
+}
+
+
 .muestroVillano{
     display: flex;
     flex-direction: row;
+}
+.batman{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+#botonVillano{
+    display: flex;
+    flex-direction: row;  
 }

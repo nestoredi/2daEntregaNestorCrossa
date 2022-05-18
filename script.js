@@ -52,6 +52,15 @@ botonVillano.addEventListener('click',()=>{
 function entraNombre (){
     let entrada = document.getElementById("entrada").value
     let entrNombre = document.getElementById("entrNombre")
+  
     entrNombre.innerHTML = `HOLA ${entrada}`
     
 }
+Swal.fire({
+    title: 'Listo para la accion!',
+    text: 'Bienvenidos al mundo de Batman',
+    imageUrl: 'https://i.pinimg.com/564x/07/fd/bf/07fdbf43f40c86d8713ae65cf23d534d.jpg',
+    imageWidth: 400,
+    imageHeight: 400,
+    imageAlt: 'batworld',
+  })

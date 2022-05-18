@@ -12,16 +12,18 @@
    <!--bienvenida inicio-->
    <div class="alert alert-primary" id="entrNombre1" role="alert">
      Bienvenido a la pagina de Batman! Entra tu nombre....!
-  </div>
-<input type="text" id="entrada"  oninput="entraNombre ()">
+  </div #bat>
+  <input type="text" id="entrada"  oninput="entraNombre ()" placeholder="Entra tu nombre">
 
 
-<div class="alert alert-primary" id="entrNombre" role="alert">
-    
-  </div>
+  <div class="alert alert-primary" role="alert">
+      
+    </div>
+  
+  <div class="batman" id="entrNombre" ></div><br><br>
 
-<div id="bienv"></div><br><br>
 <!--bienvenida final-->
+<h2>Diviertete creando las caracteristicas de tus villanos preferidos</h2>
 <!--formulario de captura de los villanos para almacenarlos-->
 <div class="contenedor">
   <form id="formulario">
@@ -46,10 +48,11 @@
 </div>
 <br><br><br>
 <button id="botonVillano" class="btn btn-dark">Mostrar villano</button>
-<div class=" container  " >
-  <div class="muestroVillano"  id="divVillanos"></div>
+<div class=" container row  " >
+  <div   id="divVillanos"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="script.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+<script src="script.js"></script>  
 </body>
 </html>
